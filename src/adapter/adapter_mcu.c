@@ -23,4 +23,7 @@ void adapter_mcu_init(void) {
 
     // GPIO
     MX_GPIO_Init();
+
+    // SPI
+    MX_SPI1_Init();
 }
