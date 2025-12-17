@@ -42,6 +42,6 @@ typedef struct {
  * @param buffer_size biffer size
  * @param timeout timeout of data transmission in ms
  */
-void handler_spi_transmit(handler_spi_t* handler_spi, uint8_t* buffer, uint16_t buffer_size, uint32_t timeout);
+void handler_spi_transmit(handler_spi_t* handler_spi, uint8_t* buffer, uint16_t buffer_size);
 
 #endif // __HANDLER_SPI_H__

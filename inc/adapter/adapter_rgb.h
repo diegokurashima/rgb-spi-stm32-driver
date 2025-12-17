@@ -24,6 +24,7 @@
  * @brief rgb color enum
  */
 typedef enum {
+    ADAPTER_RGB_OFF,
     ADAPTER_RGB_COLOR_RED,
     ADAPTER_RGB_COLOR_GREEN,
     ADAPTER_RGB_COLOR_BLUE,
