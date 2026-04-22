@@ -18,6 +18,9 @@ void adapter_mcu_init(void) {
     // HAL
     HAL_Init();
 
+    // DMA
+    MX_DMA_Init();
+
     // TIMERS
     SystemClock_Config();
 
@@ -26,4 +29,5 @@ void adapter_mcu_init(void) {
 
     // SPI
     MX_SPI1_Init();
+
 }

@@ -17,7 +17,6 @@
  *****************************************/
 
 #define RGB_SPI_BUFFER_SIZE (24)
-#define RGB_SPI_TIMEOUT (1)
 
 /*****************************************
  * Private Variables
@@ -30,6 +29,12 @@ static handler_spi_t handler_spi_rgb = {
 uint8_t rgb_transmit_buffer[RGB_SPI_BUFFER_SIZE];
 
 static rgb_color_t rgb_colors[] = {
+    {
+        /* ADAPTER_RGB_OFF */
+        .red = 0,
+        .green = 0,
+        .blue = 0,
+    },
     {
         /* ADAPTER_RGB_COLOR_RED */
         .red = 255,
@@ -50,9 +55,9 @@ static rgb_color_t rgb_colors[] = {
     },
     {
         /* ADAPTER_RGB_COLOR_WHITE */
-        .red = 100,
-        .green = 100,
-        .blue = 100,
+        .red = 255,
+        .green = 255,
+        .blue = 255,
     },
 };
 
@@ -82,5 +87,5 @@ void adapter_rgb_set_color(adapter_rgb_color_enum_t rgb_color_enum) {
 
 void adapter_rgb_transmit(rgb_color_t rgb_color) {
     protocol_ws2812b_set_transmit_buffer(rgb_color, rgb_transmit_buffer);
-    handler_spi_transmit(&handler_spi_rgb, rgb_transmit_buffer, RGB_SPI_BUFFER_SIZE, RGB_SPI_TIMEOUT);
+    handler_spi_transmit(&handler_spi_rgb, rgb_transmit_buffer, RGB_SPI_BUFFER_SIZE);
 }

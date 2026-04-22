@@ -18,6 +18,6 @@
  * Public Functions Prototypes
  *****************************************/
 
-void handler_spi_transmit(handler_spi_t* handler_spi, uint8_t* buffer, uint16_t buffer_size, uint32_t timeout) {
-    HAL_SPI_Transmit(handler_spi->hspi, buffer, buffer_size, timeout);
+void handler_spi_transmit(handler_spi_t* handler_spi, uint8_t* buffer, uint16_t buffer_size) {
+    HAL_SPI_Transmit_DMA(handler_spi->hspi, buffer, buffer_size);
 }
